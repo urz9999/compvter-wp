@@ -8,14 +8,15 @@
 				<?php the_content(); ?>
 				
 				<div class="grid">
-					<?php get_template_part('grid_item'); ?>
-					<?php get_template_part('grid_item'); ?>
-					<?php get_template_part('grid_item'); ?>
-					<?php get_template_part('grid_item'); ?>
-					<?php get_template_part('grid_item'); ?>
-					<?php get_template_part('grid_item'); ?>
-					<?php get_template_part('grid_item'); ?>
-					<?php get_template_part('grid_item'); ?>
+				
+					<?php 
+						for($i = 0; $i < 12; $i+=1) {
+							$par = rand(2,6);
+							$content = file_get_contents('http://loripsum.net/api/'.$par.'/short/headers');
+							set_query_var( 'item_text', $content);
+							get_template_part('grid_item'); 
+						}
+					?>
 				</div>
 				
 			</div>
@@ -30,6 +31,8 @@
 		  columnWidth: '.grid-item',
 		  percentPosition: true
 		});
+		Waves.attach('.btn');
+		Waves.init();
 	});
 </script>
 

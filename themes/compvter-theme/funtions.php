@@ -16,4 +16,9 @@ if ( ! function_exists( 'compvter_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'compvter_setup' );
+
+
+
+
+
 ?>
