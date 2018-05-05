@@ -1,13 +1,14 @@
 <?php get_header(); ?>
-
 <?php if ( have_posts() ) { while ( have_posts() ) {  the_post();  ?>
-
 		<section>
-			<h1><?php echo get_the_title(); ?></h1>
 			<div>
-				<?php the_content(); ?>
+				<div class="loader">
+					<svg class="circular" viewBox="25 25 50 50">
+					  <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+					</svg>
+				</div>
 				
-				<div class="grid">
+				<div class="grid invisible">
 				
 					<?php 
 						for($i = 0; $i < 12; $i+=1) {
@@ -22,18 +23,5 @@
 			</div>
 		</section>
 <?php } } ?>
-
-<script>
-	$(document).ready(function(){
-		$('.grid').masonry({
-		  // options
-		  itemSelector: '.grid-item',
-		  columnWidth: '.grid-item',
-		  percentPosition: true
-		});
-		Waves.attach('.btn');
-		Waves.init();
-	});
-</script>
 
 <?php get_footer(); ?>

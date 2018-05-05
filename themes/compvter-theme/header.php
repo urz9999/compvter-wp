@@ -50,5 +50,11 @@
 			</div>
 		</header>
 		<!-- ===== END MENU ======================= -->
-		<div id="page" class="container-fluid">
+		<div id="page" class="container-fluid no-padding">
+			<div class="oblique parallax" style="background-image: url('https://images8.alphacoders.com/711/thumb-1920-711277.png');">
+				<div class="sub-oblique container">
+					<br>
+					<h1 class="text-white"><?php echo get_the_title(); ?></h1>
+				</div>
+			</div>
 			<div class="container">
